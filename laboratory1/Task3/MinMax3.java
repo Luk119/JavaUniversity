@@ -1,6 +1,9 @@
 package laboratory1.Task3;
+
 import java.util.Scanner;
+
 //3. W klasie MinMax3 rozwiazac podany problem:
+
 //Uzytkownik podaje liczbe trzycyfrowa (czyli pomiedzy 111 a 999).
 //Program znajduje odpowiednio najmniejsza i najwieksza liczbe o cyfrach
 //z zadanej liczby, a nastepnie liczy roznice najwiekszej i najmniejszej,
@@ -11,33 +14,79 @@ public class MinMax3 {
 
         Scanner scanner = new Scanner(System.in);
 
+
         System.out.println("Enter 3 digit value:");
         int value = scanner.nextInt();
 
-        if(value > 999 || value < 111){
+        while (value > 999 || value < 111) {
             System.out.println("Error");
+            value = scanner.nextInt();
         }
-        else{
-            int minimum = Min(value);
-            int maximum = Max(value);
-            System.out.println(maximum - minimum);
-        }
+//            System.out.println(minimum);
+//            System.out.println(medium);
+//            System.out.println(maximum);
 
+        int minimum = min(value);
+        int maximum = max(value);
+        int medium = med(minimum, maximum, value);
+
+        int result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
+        System.out.println(result);
+
+            for(int i=0; i<15; i++) {
+
+                maximum = max(result);
+                minimum = min(result);
+                medium = med(minimum, maximum, result);
+                result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
+                System.out.println(maxValue(maximum, medium, minimum));
+                System.out.println(minValue(maximum, medium, minimum));
+                System.out.println(result);
+            }
     }
-    public static int Min(int value){
-        int min=9;
-        for(int i=3; i<0; i++){
-            if(value%10 < min){min=value%10;}
-            value/=10;
+
+
+    public static int min(int value) {
+        int min = 9;
+        for (int i = 3; i > 0; i--) {
+            if (value % 10 < min) {
+                min = value % 10;
+            }
+            value /= 10;
         }
         return min;
     }
-    public static int Max(int value){
-        int max=0;
-        for(int i=3; i<0; i++){
-            if(value%10 > max){max=value%10;}
-            value/=10;
+
+    public static int max(int value) {
+        int max = 0;
+        for (int i = 3; i > 0; i--) {
+            if (value % 10 > max) {
+                max = value % 10;
+            }
+            value /= 10;
         }
         return max;
     }
+
+    public static int med(int min, int max, int value) {
+        int med = min;
+
+        for (int i = 3; i > 0; i--) {
+            if (value % 10 != min && value % 10 != max) {
+                med = value % 10;
+            }
+            value /= 10;
+        }
+        return med;
+    }
+
+    public static int minValue(int max, int med, int min) {
+        return max + med * 10 + min * 100;
+    }
+
+    static int maxValue(int max, int med, int min) {
+        return max * 100 + med * 10 + min;
+    }
+
+
 }
