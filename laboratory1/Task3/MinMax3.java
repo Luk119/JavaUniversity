@@ -33,15 +33,15 @@ public class MinMax3 {
         int result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
         System.out.println(result);
 
-            for(int i=0; i<15; i++) {
+            while(result != 495) {
 
                 maximum = max(result);
                 minimum = min(result);
                 medium = med(minimum, maximum, result);
                 result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
-                System.out.println(maxValue(maximum, medium, minimum));
-                System.out.println(minValue(maximum, medium, minimum));
-                System.out.println(result);
+                System.out.println("maxV: " + maxValue(maximum, medium, minimum));
+                System.out.println("minV: " + minValue(maximum, medium, minimum));
+                System.out.println("result: " + result);
             }
     }
 
