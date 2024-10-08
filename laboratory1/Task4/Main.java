@@ -15,7 +15,7 @@ public class Main {
             result = MaxNum(value) - MinNum(value);
             System.out.println(result);
         }
-        while(result > 0);
+        while(result >0);
     }
 
 
