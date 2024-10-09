@@ -9,13 +9,26 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 4-digit value: ");
         int value = scanner.nextInt();
-        int result = 1;
 
-        do{
-            result = MaxNum(value) - MinNum(value);
-            System.out.println(result);
+        if(isZero(value)){
+            System.out.println("0");
         }
-        while(result >0);
+        else {
+            int result = value;
+
+            do {
+                result = MaxNum(result) - MinNum(result);
+                System.out.println(result);
+            }
+            while (result != 6174);
+        }
+
+
+//        System.out.println(MaxNum(1234));
+//        System.out.println(MinNum(1234));
+//        result = MaxNum(value) - MinNum(value);
+//        System.out.println(result);
+
     }
 
 
@@ -34,8 +47,12 @@ public class Main {
         StringBuilder reverse = new StringBuilder(new String(chars));
         reverse.reverse();
         return Integer.parseInt(reverse.toString());
+    }
 
-
+    static boolean isZero(int n){
+        String toString = Integer.toString(n);
+        char[] chars = toString.toCharArray();
+        return chars[0] == chars[1] && chars[1] == chars[2] && chars[1] == chars[3];
     }
 }
 
