@@ -10,6 +10,12 @@ public class Main {
         System.out.println("Enter 4-digit value: ");
         int value = scanner.nextInt();
 
+        while (value > 9999 || value < 1111) {
+            System.out.println("Error");
+            System.out.print("Try again: ");
+            value = scanner.nextInt();
+        }
+
         if(isZero(value)){
             System.out.println("0");
         }
