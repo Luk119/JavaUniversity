@@ -30,21 +30,24 @@ public class MinMax3 {
         int maximum = max(value);
         int medium = med(minimum, maximum, value);
 
-        int result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
-        System.out.println(result);
+        if(isZero(value))
+        {
+            System.out.println("0");
+        }
+        else{
+            int result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
 
-            while(result != 495) {
-
+            do{
                 maximum = max(result);
                 minimum = min(result);
                 medium = med(minimum, maximum, result);
                 result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
-                System.out.println("maxV: " + maxValue(maximum, medium, minimum));
-                System.out.println("minV: " + minValue(maximum, medium, minimum));
-                System.out.println("result: " + result);
-            }
-    }
 
+                System.out.println(result);
+            }
+            while(result != 495);
+        }
+    }
 
     public static int min(int value) {
         int min = 9;
@@ -81,12 +84,16 @@ public class MinMax3 {
     }
 
     public static int minValue(int max, int med, int min) {
-        return max + med * 10 + min * 100;
+        return max + med*10 + min*100;
     }
 
     static int maxValue(int max, int med, int min) {
-        return max * 100 + med * 10 + min;
+        return max*100 + med*10 + min;
     }
 
-
+    static boolean isZero(int n){
+        String toString = Integer.toString(n);
+        char[] chars = toString.toCharArray();
+        return chars[0] == chars[1] && chars[1] == chars[2];
+    }
 }
