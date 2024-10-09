@@ -16,6 +16,7 @@ public class MinMax3 {
 
 
         System.out.println("Enter 3 digit value:");
+
         int value = scanner.nextInt();
 
         while (value > 999 || value < 111) {
