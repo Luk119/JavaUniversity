@@ -3,6 +3,7 @@ package laboratory1.Task4;
 import java.util.Arrays;
 import java.util.Scanner;
 
+// Łukasz Kundzicz
 public class Main {
     public static void main(String[] args) {
 
@@ -37,7 +38,7 @@ public class Main {
 
     }
 
-
+    // Zwraca najmniejszą liczbę utworzoną z cyfr n
     static int MinNum(int n) {
         String toString = Integer.toString(n);
         char[] chars = toString.toCharArray();
@@ -45,7 +46,7 @@ public class Main {
         toString = new String(chars);
         return Integer.parseInt(toString);
     }
-
+    // Zwraca największą liczbę utworzoną z cyfr n
     static int MaxNum(int n) {
         String toString = Integer.toString(n);
         char[] chars = toString.toCharArray();
@@ -54,7 +55,7 @@ public class Main {
         reverse.reverse();
         return Integer.parseInt(reverse.toString());
     }
-
+    // Sprawdza, czy wszystkie cyfry liczby n są takie same
     static boolean isZero(int n){
         String toString = Integer.toString(n);
         char[] chars = toString.toCharArray();
