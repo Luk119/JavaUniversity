@@ -9,6 +9,8 @@ import java.util.Scanner;
 //z zadanej liczby, a nastepnie liczy roznice najwiekszej i najmniejszej,
 //wypisuje ja na ekran i pretwarza analogicznie dalej.
 // Program powinien sie zatrzymac, gdy liczby staja sie takie same.
+
+// Łukasz Kundzicz
 public class MinMax3 {
     public static void main(String[] args) {
 
@@ -49,7 +51,7 @@ public class MinMax3 {
             while(result != 495);
         }
     }
-
+    // Zwraca najmniejszą cyfrę z liczby
     public static int min(int value) {
         int min = 9;
         for (int i = 3; i > 0; i--) {
@@ -60,7 +62,7 @@ public class MinMax3 {
         }
         return min;
     }
-
+    // Zwraca największą cyfrę z liczby
     public static int max(int value) {
         int max = 0;
         for (int i = 3; i > 0; i--) {
@@ -71,7 +73,7 @@ public class MinMax3 {
         }
         return max;
     }
-
+    // Zwraca środkową cyfrę z liczby
     public static int med(int min, int max, int value) {
         int med = min;
 
@@ -83,15 +85,15 @@ public class MinMax3 {
         }
         return med;
     }
-
+    // Tworzy najmniejszą możliwą liczbę z cyfr - rosnąco
     public static int minValue(int max, int med, int min) {
         return max + med*10 + min*100;
     }
-
+    // Tworzy największą możliwą liczbę z cyfr - malejącyo
     static int maxValue(int max, int med, int min) {
         return max*100 + med*10 + min;
     }
-
+    // Sprawdza, czy wszystkie cyfry są takie same
     static boolean isZero(int n){
         String toString = Integer.toString(n);
         char[] chars = toString.toCharArray();
