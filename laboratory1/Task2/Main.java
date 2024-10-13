@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 //2. Sprawdz, czy liczba podana z klawiatury jest liczba palindromiczna
 // (lustrzane odbicie, czytana od konca i poczatku jest taka sama).
+
+// Łukasz Kundzicz
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,12 +17,13 @@ public class Main {
         }
     }
 
+//    Funkcja zwracająca string wspak
     public static boolean palindrom(String str) {
 
-        String imieWspak = "";
+        String Wspak = "";
         for (int i = str.length() - 1; i >= 0; i--) {
-            imieWspak += str.charAt(i);
+            Wspak += str.charAt(i);
         }
-        return imieWspak.equals(str);
+        return Wspak.equals(str);
     }
 }
