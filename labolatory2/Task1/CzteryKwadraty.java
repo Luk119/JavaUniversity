@@ -10,30 +10,37 @@
 //istnieja rozklady w postaci kwadratow liczb wylacznie roznych od zera.
 package labolatory2.Task1;
 
-import java.util.Arrays;
 import java.util.Scanner;
-
 //Łukasz Kundzicz
 public class CzteryKwadraty {
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter value: ");
+        // Pobieranie liczby od użytkownika
+        System.out.print("Enter a number: ");
+        int n;
+        do{
+            n = scanner.nextInt();
+        }while(n < 0 || n > 1000);
 
-        int value = -1;
-        do {
-            value = scan.nextInt();
-        } while (value < 0 || value > 1000);
+        boolean found = false;
 
-        int[] tab = new int[4];
-
-        for (int i = 0; i < 4; i++) {
-            tab[i] = (int) Math.sqrt(value);
-            value = value - (int) Math.pow(tab[i], 2);
-
+        for (int i = 0; i*i <= n; i++) {
+            for (int j = 0; j*j <= n - i*i; j++) {
+                for (int k = 0; k*k <= n - i*i - j*j; k++) {
+                    for (int l = 0; l*l <= n - i*i - j*j - k*k; l++) {
+                        if (i*i + j*j + k*k + l*l == n) {
+                            System.out.println(n + " = " + l + "² + " + k + "² + " + j + "² + " + i + "²");
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) break;
+                }
+                if (found) break;
+            }
+            if (found) break;
         }
-        System.out.println(Arrays.toString(tab));
-
-
     }
 }
