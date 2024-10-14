@@ -9,6 +9,8 @@ import java.util.Scanner;
 //z zadanej liczby, a nastepnie liczy roznice najwiekszej i najmniejszej,
 //wypisuje ja na ekran i pretwarza analogicznie dalej.
 // Program powinien sie zatrzymac, gdy liczby staja sie takie same.
+
+// Łukasz Kundzicz
 public class MinMax3 {
     public static void main(String[] args) {
 
@@ -16,6 +18,7 @@ public class MinMax3 {
 
 
         System.out.println("Enter 3 digit value:");
+
         int value = scanner.nextInt();
 
         while (value > 999 || value < 111) {
@@ -30,22 +33,25 @@ public class MinMax3 {
         int maximum = max(value);
         int medium = med(minimum, maximum, value);
 
-        int result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
-        System.out.println(result);
+        if(isZero(value))
+        {
+            System.out.println("0");
+        }
+        else{
+            int result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
 
-            while(result != 495) {
-
+            do{
                 maximum = max(result);
                 minimum = min(result);
                 medium = med(minimum, maximum, result);
                 result = maxValue(maximum, medium, minimum) - minValue(maximum, medium, minimum);
-                System.out.println("maxV: " + maxValue(maximum, medium, minimum));
-                System.out.println("minV: " + minValue(maximum, medium, minimum));
-                System.out.println("result: " + result);
+
+                System.out.println(result);
             }
+            while(result != 495);
+        }
     }
-
-
+    // Zwraca najmniejszą cyfrę z liczby
     public static int min(int value) {
         int min = 9;
         for (int i = 3; i > 0; i--) {
@@ -56,7 +62,7 @@ public class MinMax3 {
         }
         return min;
     }
-
+    // Zwraca największą cyfrę z liczby
     public static int max(int value) {
         int max = 0;
         for (int i = 3; i > 0; i--) {
@@ -67,7 +73,7 @@ public class MinMax3 {
         }
         return max;
     }
-
+    // Zwraca środkową cyfrę z liczby
     public static int med(int min, int max, int value) {
         int med = min;
 
@@ -79,14 +85,18 @@ public class MinMax3 {
         }
         return med;
     }
-
+    // Tworzy najmniejszą możliwą liczbę z cyfr - rosnąco
     public static int minValue(int max, int med, int min) {
-        return max + med * 10 + min * 100;
+        return max + med*10 + min*100;
     }
-
+    // Tworzy największą możliwą liczbę z cyfr - malejącyo
     static int maxValue(int max, int med, int min) {
-        return max * 100 + med * 10 + min;
+        return max*100 + med*10 + min;
     }
-
-
+    // Sprawdza, czy wszystkie cyfry są takie same
+    static boolean isZero(int n){
+        String toString = Integer.toString(n);
+        char[] chars = toString.toCharArray();
+        return chars[0] == chars[1] && chars[1] == chars[2];
+    }
 }

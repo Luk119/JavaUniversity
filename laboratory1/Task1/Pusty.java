@@ -3,6 +3,7 @@ package laboratory1.Task1;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
+// Łukasz Kundzicz
 
 public class Pusty {
     public static void main(String[] args) {
