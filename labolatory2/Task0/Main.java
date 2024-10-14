@@ -7,8 +7,6 @@
 
 package labolatory2.Task0;
 
-import java.util.Scanner;
-
 //Łukasz Kundzicz
 public class Main {
     public static void main(String[] args) {
