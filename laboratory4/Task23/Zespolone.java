@@ -1,4 +1,4 @@
-package laboratory4.Task2;
+package laboratory4.Task23;
 
 //Łukasz Kundzicz
 public class Zespolone {

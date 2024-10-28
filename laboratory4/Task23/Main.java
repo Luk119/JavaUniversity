@@ -1,4 +1,7 @@
-package laboratory4.Task2;
+package laboratory4.Task23;
+
+
+import java.util.Random;
 
 //Łukasz Kundzicz
 public class Main {
@@ -17,5 +20,29 @@ public class Main {
         System.out.println("Sprzężenie z1: " + z1 + " = " + z1.sprzezenie());
         System.out.println("Moduł z2: |" + z2 + "| = " + z2.modul());
         System.out.println("Sprzężenie z2: " + z2 + " = " + z2.sprzezenie());
+
+
+        Zespolone[] arr = new Zespolone[5];
+
+        Random random = new Random();
+        for (int i = 0; i < 5; i++) {
+            arr[i] = new Zespolone(random.nextInt(10) + 1, random.nextInt(10) + 1);
+            System.out.println(arr[i]);
+        }
+
+        System.out.println(Najwiekszy(arr));
+
+    }
+
+    public static Zespolone Najwiekszy(Zespolone[] arr) {
+        double max=arr[0].modul();
+        int maxIndex=0;
+        for(int i=1; i<arr.length; i++) {
+            if(arr[i].modul() > max){
+                max = arr[i].modul();
+                maxIndex = i;
+            }
+        }
+        return arr[maxIndex];
     }
 }
