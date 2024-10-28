@@ -1,5 +1,6 @@
 package laboratory4.Task1;
 
+//Łukasz Kundzicz
 public class Wymierne {
     private int l;
     private int m;
