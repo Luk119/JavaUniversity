@@ -1,6 +1,4 @@
 package laboratory4.Task23;
-
-
 import java.util.Random;
 
 //Łukasz Kundzicz
