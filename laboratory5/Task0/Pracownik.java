@@ -14,7 +14,7 @@ public class Pracownik extends Czlowiek{
         return "Pracownik{" +
                 "imię='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
-                ", rok urodzenia=" + rokUrodzenia +
+                ", rok urodzenia=" + rok_urodzenia +
                 ", wypłata=" + wyplata +
                 '}';
     }
