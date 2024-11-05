@@ -1,5 +1,5 @@
 package laboratory5.Task1;
-
+//Łukasz Kundzicz
 public class Rownanie2 extends Rownanie {
 
     Rownanie2() {

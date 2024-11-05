@@ -1,6 +1,6 @@
 package laboratory5.Task1;
 
-
+//Łukasz Kundzicz
 public class Main {
     public static void main(String[] args) {
 

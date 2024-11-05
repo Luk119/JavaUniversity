@@ -1,7 +1,7 @@
 package laboratory5.Task1;
 
 import java.util.Scanner;
-
+//Łukasz Kundzicz
 abstract class Rownanie
 {
     protected double[] dane;
