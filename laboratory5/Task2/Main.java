@@ -3,7 +3,7 @@ package laboratory5.Task2;
 import laboratory5.Task3.Figura3D;
 import laboratory5.Task3.Kula;
 import laboratory5.Task3.Prostopadloscian;
-
+//Łukasz Kundzicz
 public class Main {
     public static void main(String[] args) {
         Figura prostokat = new Prostokat(5, 3);
