@@ -3,7 +3,7 @@ package laboratory6.Task1;
 import java.nio.file.*;
 import java.io.*;
 import java.util.*;
-
+//Łukasz Kundzicz
 public class Life {
     private final int k;
     private final int r;
