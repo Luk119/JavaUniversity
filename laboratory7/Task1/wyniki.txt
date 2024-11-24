@@ -1,0 +1,33 @@
+Standardowa notacja:
+Tautologia 1: (p -> (p | q)) = true
+Tautologia 2: ((p & p) <=> p) = true
+Kontrtautologia 1: (p & ~p) = false
+Kontrtautologia 2: (~p & (p | q)) = false
+Formuła 1: (p & q) = false
+Formuła 2: (p <=> q) = false
+Wartościowanie: [p, q] -> true
+Wartościowanie: [p, q] -> true
+Wartościowanie: [p, q] -> true
+Wartościowanie: [p, q] -> true
+(p -> (p | q)) jest tautologią.
+Wartościowanie: [p] -> true
+Wartościowanie: [p] -> true
+((p & p) <=> p) jest tautologią.
+Wartościowanie: [p] -> false
+Wartościowanie: [p] -> false
+(p & ~p) NIE jest tautologią.
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> true
+Wartościowanie: [p, q] -> false
+(~p & (p | q)) NIE jest tautologią.
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> true
+(p & q) NIE jest tautologią.
+Wartościowanie: [p, q] -> true
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> false
+Wartościowanie: [p, q] -> true
+(p <=> q) NIE jest tautologią.
