@@ -63,12 +63,29 @@ public class Main {
 
     // Task 5
 
-        System.out.println("enter text: ");
-        String input = scanner.nextLine();
+//        System.out.println("enter text: ");
+//        String input = scanner.nextLine();
+//
+//        String modify = input.toUpperCase() + "!";
+//
+//        System.out.println(modify);
 
-        String modify = input.toUpperCase() + "!";
+    // Task 6
 
-        System.out.println(modify);
+        System.out.println("Enter first text: ");
+        String firstInput = scanner.nextLine();
+
+        System.out.println("Enter first text: ");
+        String secondInput = scanner.nextLine();
+
+        boolean isEqual = false;
+
+        if(firstInput.equalsIgnoreCase(secondInput)){
+            isEqual = true;
+        }
+
+        System.out.println("isEqual: " + isEqual);
+
 
 
 
