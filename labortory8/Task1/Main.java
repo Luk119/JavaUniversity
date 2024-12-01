@@ -72,9 +72,9 @@ public class Main {
 //        }
         for (char c : s.toCharArray()) {
             if (Character.isUpperCase(c)) {
-                result.append((char) ('A' + (c - 'A' + 1) % 26));
+                result.append((char) ('A' + (c - 'A' + 13) % 26));
             } else if (Character.isLowerCase(c)) {
-                result.append((char) ('a' + (c - 'a' + 1) % 26));
+                result.append((char) ('a' + (c - 'a' + 13) % 26));
             } else {
                 result.append(c);
             }
@@ -133,6 +133,7 @@ public class Main {
         System.out.println("Ala ma kota: " + cezar("Ala ma kota"));
 
         // 9. Szyfr harcerski
+        System.out.println("Szyfr Harcerski: ");
         System.out.println(harcerski("GADERYPOLUKI"));
         System.out.println(harcerski("Testowanie Harcerskie"));
     }
