@@ -130,12 +130,12 @@ public class Main {
         // 8. Szyfr Cezara
         System.out.println("Cezar:");
         System.out.println("Kodowanie cezarem: " + cezar("Kodowanie cezarem"));
-        System.out.println("Ala ma kota: " + cezar("Ala ma kota"));
+        System.out.println("Ala ma kota: " + cezar("Ala ma kota")); //Nyn zn xbgn
 
         // 9. Szyfr harcerski
         System.out.println("Szyfr Harcerski: ");
         System.out.println(harcerski("GADERYPOLUKI"));
-        System.out.println(harcerski("Testowanie Harcerskie"));
+        System.out.println(harcerski("Testowanie Harcerskie")); // Tdstpwgnid Hgrcdrskid
     }
 }
 
