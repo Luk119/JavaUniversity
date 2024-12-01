@@ -32,5 +32,21 @@ public class Main {
 //
 //            System.out.println(sb);
 
+
+//    Task 3
+
+        System.out.println("enter a word: ");
+        String input = scanner.nextLine();
+
+
+        boolean allDigits = true;
+        for(char i: input.toCharArray()){
+            if(!Character.isDigit(i)){
+                allDigits = false;
+            }
+        }
+
+        System.out.println("allDigits: " + allDigits);
+
     }
 }
