@@ -1,5 +1,6 @@
 package revisionTasks;
 
+import java.io.StringBufferInputStream;
 import java.util.Scanner;
 
 public class Main {
@@ -18,18 +19,18 @@ public class Main {
 
 //    Task 2
 
-//        System.out.println("Enter a sentence: ");
+//        System.out.println("enter a sentence: ");
 //        String sentence = scanner.nextLine();
 //        String[] words = sentence.split(" ");
-//        StringBuilder acronym = new StringBuilder();
+//        StringBuilder sb = new StringBuilder();
 //
 //        for(String word : words){
 //            if(!word.isEmpty()){
-//                acronym.append(word.toUpperCase().charAt(0));
+//                sb.append(word.toUpperCase().charAt(0));
 //            }
 //        }
 //
-//        System.out.println(acronym);
+//            System.out.println(sb);
 
     }
 }
