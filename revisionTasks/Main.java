@@ -35,18 +35,29 @@ public class Main {
 
 //    Task 3
 
-        System.out.println("enter a word: ");
-        String input = scanner.nextLine();
+//        System.out.println("enter a word: ");
+//        String input = scanner.nextLine();
+//
+//
+//        boolean allDigits = true;
+//        for(char i: input.toCharArray()){
+//            if(!Character.isDigit(i)){
+//                allDigits = false;
+//            }
+//        }
+//
+//        System.out.println("allDigits: " + allDigits);
+//
+    // Task 4
 
+        System.out.println("enter a entence: ");
+        String sentence = scanner.nextLine();
 
-        boolean allDigits = true;
-        for(char i: input.toCharArray()){
-            if(!Character.isDigit(i)){
-                allDigits = false;
-            }
-        }
+        System.out.println("enter a  word from that sentence: ");
+        String word = scanner.nextLine();
 
-        System.out.println("allDigits: " + allDigits);
+        int index = sentence.indexOf(word);
 
+        System.out.println("word '" + word + "' is on index " + index);
     }
 }
