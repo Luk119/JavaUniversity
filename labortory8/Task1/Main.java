@@ -65,19 +65,23 @@ public class Main {
 
     // 8. Szyfr Cezara
     public static String cezar(String s) {
-        String result = "";
-        int offset = 13;
+        StringBuilder result = new StringBuilder();
+////        for(int i=0; i<300; i++){
+////            System.out.print(i);
+////            System.out.println((char) i);
+//        }
         for (char c : s.toCharArray()) {
             if (Character.isUpperCase(c)) {
-                result += (char) ('A' + (c - 'A' + offset) % 26);
+                result.append((char) ('A' + (c - 'A' + 1) % 26));
             } else if (Character.isLowerCase(c)) {
-                result += (char) ('a' + (c - 'a' + offset) % 26);
+                result.append((char) ('a' + (c - 'a' + 1) % 26));
             } else {
-                result += c;
+                result.append(c);
             }
         }
-        return result;
+        return result.toString();
     }
+
 
     // 9. Szyfr harcerski
     public static String harcerski(String s) {
@@ -124,7 +128,9 @@ public class Main {
         System.out.println(maxWartosc("4829")); // 9
 
         // 8. Szyfr Cezara
-        System.out.println(cezar("Kodowanie cezarem"));
+        System.out.println("Cezar:");
+        System.out.println("Kodowanie cezarem: " + cezar("Kodowanie cezarem"));
+        System.out.println("Ala ma kota: " + cezar("Ala ma kota"));
 
         // 9. Szyfr harcerski
         System.out.println(harcerski("GADERYPOLUKI"));
