@@ -72,23 +72,51 @@ public class Main {
 
     // Task 6
 
-        System.out.println("Enter first text: ");
-        String firstInput = scanner.nextLine();
+//        System.out.println("Enter first text: ");
+//        String firstInput = scanner.nextLine();
+//
+//        System.out.println("Enter first text: ");
+//        String secondInput = scanner.nextLine();
+//
+//        boolean isEqual = false;
+//
+//        if(firstInput.equalsIgnoreCase(secondInput)){
+//            isEqual = true;
+//        }
+//
+//        System.out.println("isEqual: " + isEqual);
 
-        System.out.println("Enter first text: ");
-        String secondInput = scanner.nextLine();
+    // Task 7
 
-        boolean isEqual = false;
+        System.out.println("enter a text: ");
+        String input = scanner.nextLine();
 
-        if(firstInput.equalsIgnoreCase(secondInput)){
-            isEqual = true;
+        System.out.println("enter a digit: ");
+        int index = scanner.nextInt() - 1;
+
+        System.out.println(digitOrLetter(input, index));
+
+
+
+
+    }
+
+    public static String digitOrLetter(String text, int index){
+
+        if (index > text.length() || index < 0) {
+            return "wrong index";
         }
 
-        System.out.println("isEqual: " + isEqual);
+        char myChar = text.charAt(index);
 
-
-
-
-
+        if(Character.isDigit(myChar)){
+            return "it's digit";
+        }
+        else if(Character.isLetter(myChar)){
+            return "i'ts letter";
+        }
+        else{
+            return "it's other symbol";
+        }
     }
 }
