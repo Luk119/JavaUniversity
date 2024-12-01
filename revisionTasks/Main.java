@@ -88,16 +88,27 @@ public class Main {
 
     // Task 7
 
+//        System.out.println("enter a text: ");
+//        String input = scanner.nextLine();
+//
+//        System.out.println("enter a digit: ");
+//        int index = scanner.nextInt() - 1;
+//
+//        System.out.println(digitOrLetter(input, index));
+
+    // Task 8
+
         System.out.println("enter a text: ");
-        String input = scanner.nextLine();
+        String text = scanner.nextLine();
 
-        System.out.println("enter a digit: ");
-        int index = scanner.nextInt() - 1;
+        char[] textCharArray = text.toCharArray();
 
-        System.out.println(digitOrLetter(input, index));
+        String reversed = "";
+        for(int i=textCharArray.length-1; i>=0; i--){
+            reversed += textCharArray[i];
+        }
 
-
-
+        System.out.println(reversed);
 
     }
 
