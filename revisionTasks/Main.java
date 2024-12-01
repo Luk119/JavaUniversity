@@ -113,24 +113,44 @@ public class Main {
     // Task 9
 
 
-        System.out.println("enter a word: ");
-        String text = scanner.nextLine();
+//        System.out.println("enter a word: ");
+//        String text = scanner.nextLine();
+//
+//        System.out.println("enter a character to insert: ");
+//        char character = scanner.nextLine().charAt(0);
+//
+//        System.out.println("enter an index: ");
+//        int index = scanner.nextInt();
+//
+//        if(index < 0 || index > text.length()){
+//            System.out.println("wrong index");
+//        }
+//
+//        StringBuilder sb = new StringBuilder(text);
+//        sb.insert(index, character);
+//
+//        System.out.println(sb);
 
-        System.out.println("enter a character to insert: ");
-        char character = scanner.nextLine().charAt(0);
+    // Task 10
 
-        System.out.println("enter an index: ");
-        int index = scanner.nextInt();
+        System.out.println("enter a word with different letter sizes: ");
+        String word = scanner.nextLine();
+        StringBuilder sb = new StringBuilder();
 
-        if(index < 0 || index > text.length()){
-            System.out.println("wrong index");
+        for(char w : word.toCharArray()){
+
+            if(Character.isUpperCase(w)){
+                sb.append(Character.toLowerCase(w));
+            }
+            else if(Character.isLowerCase(w)){
+                sb.append(Character.toUpperCase(w));
+            }
+            else{
+                sb.append(w);
+            }
         }
 
-        StringBuilder sb = new StringBuilder(text);
-        sb.insert(index, character);
-
         System.out.println(sb);
-
 
     }
 
