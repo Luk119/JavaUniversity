@@ -98,17 +98,39 @@ public class Main {
 
     // Task 8
 
-        System.out.println("enter a text: ");
+//        System.out.println("enter a text: ");
+//        String text = scanner.nextLine();
+//
+//        char[] textCharArray = text.toCharArray();
+//
+//        String reversed = "";
+//        for(int i=textCharArray.length-1; i>=0; i--){
+//            reversed += textCharArray[i];
+//        }
+//
+//        System.out.println(reversed);
+
+    // Task 9
+
+
+        System.out.println("enter a word: ");
         String text = scanner.nextLine();
 
-        char[] textCharArray = text.toCharArray();
+        System.out.println("enter a character to insert: ");
+        char character = scanner.nextLine().charAt(0);
 
-        String reversed = "";
-        for(int i=textCharArray.length-1; i>=0; i--){
-            reversed += textCharArray[i];
+        System.out.println("enter an index: ");
+        int index = scanner.nextInt();
+
+        if(index < 0 || index > text.length()){
+            System.out.println("wrong index");
         }
 
-        System.out.println(reversed);
+        StringBuilder sb = new StringBuilder(text);
+        sb.insert(index, character);
+
+        System.out.println(sb);
+
 
     }
 
