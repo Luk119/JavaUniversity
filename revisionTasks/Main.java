@@ -50,14 +50,28 @@ public class Main {
 //
     // Task 4
 
-        System.out.println("enter a entence: ");
-        String sentence = scanner.nextLine();
+//        System.out.println("enter a entence: ");
+//        String sentence = scanner.nextLine();
+//
+//        System.out.println("enter a  word from that sentence: ");
+//        String word = scanner.nextLine();
+//
+//        int index = sentence.indexOf(word);
+//
+//        System.out.println("word '" + word + "' is on index " + index);
 
-        System.out.println("enter a  word from that sentence: ");
-        String word = scanner.nextLine();
 
-        int index = sentence.indexOf(word);
+    // Task 5
 
-        System.out.println("word '" + word + "' is on index " + index);
+        System.out.println("enter text: ");
+        String input = scanner.nextLine();
+
+        String modify = input.toUpperCase() + "!";
+
+        System.out.println(modify);
+
+
+
+
     }
 }
