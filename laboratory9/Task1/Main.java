@@ -1,5 +1,5 @@
 package laboratory9.Task1;
-
+// Łukasz Kundzicz
 public class Main {
     public static void main(String[] args) {
         Przedzial p1 = new Przedzial(1.0, true, 5.0, false);

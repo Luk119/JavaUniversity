@@ -1,5 +1,5 @@
 package laboratory9.Task1;
-
+// Łukasz Kundzicz
 public class Interval<Key extends Comparable<Key>> {
     private final Key min;    // min endpoint
     private final Key max;    // max endpoint

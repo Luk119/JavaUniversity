@@ -1,7 +1,7 @@
 package laboratory9.Task1;
 
 import java.util.Objects;
-
+// Łukasz Kundzicz
 public class Przedzial {
     private final Double min;    // dolny kraniec
     private final Double max;    // górny kraniec
