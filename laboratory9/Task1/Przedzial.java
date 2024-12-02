@@ -12,8 +12,16 @@ public class Przedzial {
 
     // Konstruktor
     public Przedzial(Double min, boolean minInclusive, Double max, boolean maxInclusive) {
-        if (min > max || (min.equals(max) && (!minInclusive || !maxInclusive))) {
-            throw new IllegalArgumentException("Niepoprawny przedział");
+        if ((min > max) || (min.equals(max) && !minInclusive && !maxInclusive)) {
+            if (min.equals(POS_INF) && max.equals(NEG_INF)) {
+                // Specjalny przypadek dla pustego przedziału
+                this.min = POS_INF;
+                this.max = NEG_INF;
+                this.minInclusive = false;
+                this.maxInclusive = false;
+                return;
+            }
+            throw new IllegalArgumentException("Niepoprawny przedział: " + min + ", " + max);
         }
         this.min = min;
         this.max = max;
@@ -23,7 +31,7 @@ public class Przedzial {
 
     // Reprezentacja pustego przedziału
     public static Przedzial pusty() {
-        return new Przedzial(0.0, false, 0.0, false);
+        return new Przedzial(POS_INF, false, NEG_INF, false); // Pusty przedział
     }
 
     // Suma dwóch przedziałów
@@ -53,7 +61,7 @@ public class Przedzial {
     // Różnica dwóch przedziałów
     public Przedzial roznica(Przedzial inny) {
         if (this.czyRozlaczne(inny) || this.equals(inny)) {
-            return this;
+            return pusty();
         }
         if (inny.min <= this.min && inny.max >= this.max) {
             return pusty();
