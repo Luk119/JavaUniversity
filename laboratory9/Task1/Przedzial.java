@@ -37,9 +37,6 @@ public class Przedzial {
 
     //oblicza sumę dwóch przedziałów
     public Przedzial suma(Przedzial inny) {
-        if (this.czyRozlaczne(inny)) {
-            sumaRozlaczna(inny);
-        }
         double nowyMin = Math.min(this.min, inny.min);
         double nowyMax = Math.max(this.max, inny.max);
         boolean nowyMinInclusive = (this.min < inny.min) ? this.minInclusive : inny.minInclusive;
@@ -99,8 +96,8 @@ public class Przedzial {
 
     //sprawdza czy przedziały są rozłączne
     private boolean czyRozlaczne(Przedzial inny) {
-        return (this.max < inny.min || (this.max.equals(inny.min) && (!this.maxInclusive || !inny.minInclusive)))
-                || (inny.max < this.min || (inny.max.equals(this.min) && (!inny.maxInclusive || !this.minInclusive)));
+        return this.max < inny.min || (this.max.equals(inny.min) && (!this.maxInclusive || !inny.minInclusive))
+                || inny.max < this.min || (inny.max.equals(this.min) && (!inny.maxInclusive || !this.minInclusive));
     }
 
     //nadpisanie toStringa - reprezentacja tekstowa
