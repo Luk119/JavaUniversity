@@ -1,20 +1,21 @@
 package laboratory9.Task1;
 
 import java.util.Objects;
-// Łukasz Kundzicz
-public class Przedzial {
-    private final Double min;    // dolny kraniec
-    private final Double max;    // górny kraniec
-    private final boolean minInclusive; // czy dolny kraniec jest domknięty
-    private final boolean maxInclusive; // czy górny kraniec jest domknięty
-    private static final Double NEG_INF = Double.NEGATIVE_INFINITY;
-    private static final Double POS_INF = Double.POSITIVE_INFINITY;
 
-    // Konstruktor
+//Łukasz Kundzicz
+public class Przedzial {
+    private final Double min;//lewy kraniec przedziału
+    private final Double max;//prawy kraniec przedziału
+    private final boolean minInclusive;//czy lewy kraniec jest domknięty
+    private final boolean maxInclusive;//czy prawy kraniec jest domknięty
+    private static final Double NEG_INF = Double.NEGATIVE_INFINITY;//- nieskończoność
+    private static final Double POS_INF = Double.POSITIVE_INFINITY;//+ nieskończoność
+
+    //konstruktor
     public Przedzial(Double min, boolean minInclusive, Double max, boolean maxInclusive) {
         if ((min > max) || (min.equals(max) && !minInclusive && !maxInclusive)) {
             if (min.equals(POS_INF) && max.equals(NEG_INF)) {
-                // Specjalny przypadek dla pustego przedziału
+                //gdy przedział pusty
                 this.min = POS_INF;
                 this.max = NEG_INF;
                 this.minInclusive = false;
@@ -29,15 +30,15 @@ public class Przedzial {
         this.maxInclusive = maxInclusive;
     }
 
-    // Reprezentacja pustego przedziału
+    //metoda zwracająca pusty przedział
     public static Przedzial pusty() {
-        return new Przedzial(POS_INF, false, NEG_INF, false); // Pusty przedział
+        return new Przedzial(POS_INF, false, NEG_INF, false);
     }
 
-    // Suma dwóch przedziałów
+    //oblicza sumę dwóch przedziałów
     public Przedzial suma(Przedzial inny) {
         if (this.czyRozlaczne(inny)) {
-            return pusty();
+            sumaRozlaczna(inny);
         }
         double nowyMin = Math.min(this.min, inny.min);
         double nowyMax = Math.max(this.max, inny.max);
@@ -46,7 +47,14 @@ public class Przedzial {
         return new Przedzial(nowyMin, nowyMinInclusive, nowyMax, nowyMaxInclusive);
     }
 
-    // Iloczyn dwóch przedziałów
+    //suma rozłącznych przedziałów (nie łączy ich w jeden)
+    public Przedzial[] sumaRozlaczna(Przedzial inny) {
+        Przedzial p1 = new Przedzial(this.min, this.minInclusive, this.max, this.maxInclusive);
+        Przedzial p2 = new Przedzial(inny.min, inny.minInclusive, inny.max, inny.maxInclusive);
+        return new Przedzial[]{p1, p2};
+    }
+
+    //oblicza iloczyn dwóch przedziałów
     public Przedzial iloczyn(Przedzial inny) {
         if (this.czyRozlaczne(inny)) {
             return pusty();
@@ -58,9 +66,9 @@ public class Przedzial {
         return new Przedzial(nowyMin, nowyMinInclusive, nowyMax, nowyMaxInclusive);
     }
 
-    // Różnica dwóch przedziałów
+    //oblicza różnicę dwóch przedziałów
     public Przedzial roznica(Przedzial inny) {
-        if (this.czyRozlaczne(inny) || this.equals(inny)) {
+        if (this.equals(inny)) {
             return pusty();
         }
         if (inny.min <= this.min && inny.max >= this.max) {
@@ -75,7 +83,7 @@ public class Przedzial {
         return new Przedzial(inny.max, !inny.maxInclusive, this.max, this.maxInclusive);
     }
 
-    // Dopelnienie
+    //oblicza dopełnienie przedziału
     public Przedzial dopelnienie() {
         if (this.min.equals(NEG_INF) && this.max.equals(POS_INF)) {
             return pusty();
@@ -89,13 +97,13 @@ public class Przedzial {
         throw new UnsupportedOperationException("Wiele przedziałów w dopełnieniu nieobsługiwane");
     }
 
-    // Czy przedziały są rozłączne
+    //sprawdza czy przedziały są rozłączne
     private boolean czyRozlaczne(Przedzial inny) {
         return (this.max < inny.min || (this.max.equals(inny.min) && (!this.maxInclusive || !inny.minInclusive)))
                 || (inny.max < this.min || (inny.max.equals(this.min) && (!inny.maxInclusive || !this.minInclusive)));
     }
 
-    // Reprezentacja tekstowa
+    //nadpisanie toStringa - reprezentacja tekstowa
     @Override
     public String toString() {
         if (this.equals(pusty())) {
@@ -106,7 +114,7 @@ public class Przedzial {
         return lewyNawias + (min.equals(NEG_INF) ? "-INF" : min) + ", " + (max.equals(POS_INF) ? "INF" : max) + prawyNawias;
     }
 
-    // Równość przedziałów
+    //nadpisanie equals pod pracę z przedziałami
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
