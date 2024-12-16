@@ -74,13 +74,13 @@ public class Main {
             }
         }
 
-//         blue triangle
+//         upper blue triangle
         for (int y = 0; y < h/2; y++) {
             for (int x = 0; x <= y * 3/2 ; x++) {
                 image.setPixelColor(new Pixel(x, y), blue);
             }
         }
-
+//          lower blue triangle
         for (int y = h / 2; y < h; y++) {
             for (int x = 0; x < ((h - y) * w) / h; x++) {
                 image.setPixelColor(new Pixel(x, y), blue);
