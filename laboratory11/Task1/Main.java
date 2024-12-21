@@ -1,11 +1,13 @@
 package laboratory11.Task1;
 
+//Łukasz Kundzicz
 public class Main {
     public static void main(String[] args) {
         generatePolishFlag();
         generateJapaneseFlag();
         generateCzechFlag();
         generateUkrainianFlag();
+        generateGermanFlag();
     }
 
     private static void generatePolishFlag() {
@@ -28,22 +30,24 @@ public class Main {
     }
 
     private static void generateJapaneseFlag() {
-        BitmapImage image = new BitmapImage(800, 500);
+        BitmapImage image = new BitmapImage(300, 200);
         RGB white = new RGB(255, 255, 255);
         RGB red = new RGB(188, 0, 45);
 
-        for (int y = 0; y < 500; y++) {
-            for (int x = 0; x < 800; x++) {
+        // white background
+        for (int y = 0; y < 200; y++) {
+            for (int x = 0; x < 300; x++) {
                 image.setPixelColor(new Pixel(x, y), white);
             }
         }
 
-        int centerX = 400;
-        int centerY = 250;
-        int radius = 125;
+        // red circle
+        int centerX = 150;
+        int centerY = 100;
+        int radius = 50;
 
-        for (int y = 0; y < 500; y++) {
-            for (int x = 0; x < 800; x++) {
+        for (int y = 0; y < 200; y++) {
+            for (int x = 0; x < 300; x++) {
                 int dx = x - centerX;
                 int dy = y - centerY;
                 if (dx * dx + dy * dy <= radius * radius) {
@@ -82,7 +86,7 @@ public class Main {
         }
 //          lower blue triangle
         for (int y = h / 2; y < h; y++) {
-            for (int x = 0; x < ((h - y) * w) / h; x++) {
+            for (int x = 0; x < (h - y) * 3/2; x++) {
                 image.setPixelColor(new Pixel(x, y), blue);
             }
         }
@@ -91,17 +95,17 @@ public class Main {
     }
 
     private static void generateUkrainianFlag() {
-        BitmapImage image = new BitmapImage(800, 500);
+        BitmapImage image = new BitmapImage(300, 200);
         RGB blue = new RGB(0, 87, 183);
         RGB yellow = new RGB(255, 215, 0);
 
-        for (int y = 0; y < 250; y++) {
-            for (int x = 0; x < 800; x++) {
+        for (int y = 0; y < 100; y++) {
+            for (int x = 0; x < 300; x++) {
                 image.setPixelColor(new Pixel(x, y), blue);
             }
         }
-        for (int y = 250; y < 500; y++) {
-            for (int x = 0; x < 800; x++) {
+        for (int y = 100; y < 200; y++) {
+            for (int x = 0; x < 300; x++) {
                 image.setPixelColor(new Pixel(x, y), yellow);
             }
         }
@@ -109,7 +113,30 @@ public class Main {
     }
 
     private static void generateGermanFlag() {
-         BitmapImage image = new BitmapImage(800, 500);
+         BitmapImage image = new BitmapImage(500, 300);
+         RGB black = new RGB(0, 0, 0);
+         RGB red = new RGB(255, 0, 0);
+         RGB yellow = new RGB(255, 202, 0);
+
+         for (int y = 0; y < 100; y++) {
+             for (int x = 0; x < 500; x++) {
+                 image.setPixelColor(new Pixel(x, y), black);
+             }
+         }
+
+         for (int y = 100; y < 200; y++) {
+             for (int x = 0; x < 500; x++) {
+                 image.setPixelColor(new Pixel(x, y), red);
+             }
+         }
+
+         for (int y = 200; y < 300; y++) {
+             for (int x = 0; x < 500; x++) {
+                 image.setPixelColor(new Pixel(x, y), yellow);
+             }
+         }
+
+         image.saveToFile("laboratory11/Task1/Flags/niemcy.ppm");
     }
 
 
