@@ -27,12 +27,12 @@ public class BitmapImage {
 
     public void saveToFile(String fname) {
         try (FileWriter writer = new FileWriter(fname)) {
-            // Nagłówek pliku PPM
+            // nagłówek pliku ppm
             writer.write("P3\n");
             writer.write(width + " " + height + "\n");
             writer.write("255\n");
 
-            // Dane pikseli
+            // dane pikseli
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
                     Pixel p = new Pixel(x, y);
