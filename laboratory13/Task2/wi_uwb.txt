@@ -1,0 +1,16 @@
+Instytut Informatyki	Anna	Kowalska	prof	dyrektor
+Instytut Informatyki	Jan	Nowak	dr hab
+Zakład Sztucznej Inteligencji	Maria	Wiśniewska	dr	badacz
+Zakład Sztucznej Inteligencji	Piotr	Zieliński	mgr
+Instytut Informatyki	Agnieszka	Król	prof
+Zakład Sztucznej Inteligencji	Robert	Kowalczyk	dr
+Instytut Informatyki	Ewa	Nowicka	dr hab	zastępca dyrektora
+Zakład Sztucznej Inteligencji	Łukasz	Malinowski	mgr
+Instytut Informatyki	Adam	Majewski	dr hab
+Zakład Sztucznej Inteligencji	Paweł	Wróblewski	prof	kierownik
+Zakład Sztucznej Inteligencji	Katarzyna	Wiśniewska	mgr
+Instytut Informatyki	Grzegorz	Nowak	dr
+Instytut Informatyki	Michał	Zawadzki	mgr
+Zakład Sztucznej Inteligencji	Julia	Kowalska	dr
+Instytut Informatyki	Kamil	Lewandowski	dr hab
+Zakład Sztucznej Inteligencji	Tomasz	Malinowski	mgr
