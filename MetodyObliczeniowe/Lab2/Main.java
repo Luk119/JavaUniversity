@@ -48,6 +48,7 @@ public class Main {
             y += yTab[i] * numerator / denominator;
         }
 
+
         return y;
     }
 }
