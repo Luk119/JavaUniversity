@@ -1,5 +1,5 @@
 package labolatory3.Task9;
-
+//Łukasz Kundzicz
 public class Main extends Square {
     public static void main(String[] args){
 
